@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingreso de usuario</title>
+  </head>
+  <body>
+    <p>Ingrese su nombre:</p>
+    <input type="text" id="nombreUsuario" />
+    <button onclick="mostrarNombre()">Enviar</button>
+    <script>
+      function mostrarNombre() {
+        const nombre = document.getElementById("nombreUsuario").value;
+        alert("¡Hola, " + nombre + "!");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+# Ignorar archivos temporales de sistema operativo
+.DS_Store
+Thumbs.db
+# Ignorar archivos de configuración del editor
+.vscode/
+.idea/
+# Ignorar archivos compilados y dependencias
+node_modules/
+dist/
+build/
+# Ignorar archivos de log
+*.log
+# Ignorar archivos temporales
+*.tmp
+# Ignorar archivos específicos del proyecto
+.env
+*.bak
+# Ignorar archivos de caché
+.cache/
+*.swp
+# Ignorar archivos de configuración de paquetes
+package-lock.json
+yarn.lock
+# Ignorar archivos de pruebas
+coverage/
+*.test.js
+# Ignorar archivos de sistema de control de versiones
+.git/
+.svn/
+.hg/
+# Ignorar archivos de configuración de linter
+.eslintcache
+# Ignorar archivos de configuración de prettier
+.prettiercache
+# Ignorar archivos de configuración de TypeScript
+tsconfig.json
+# Ignorar archivos de configuración de Babel
+.babelrc
+# Ignorar archivos de configuración de Webpack
+.webpack/
+# Ignorar archivos de configuración de Docker
+docker-compose.override.yml
+.Dockerfile
+# Ignorar archivos de configuración de CI/CD
+.github/
+.gitlab-ci.yml
+.circleci/
+.travis.yml
+# Ignorar archivos de configuración de pruebas
+.jest/
+.nyc_output/
+# Ignorar archivos de configuración de documentación
+.docs/
+.docz/
+# Ignorar archivos de configuración de análisis estático
+.sonarqube/
+# Ignorar archivos de configuración de seguridad
+.npmrc
+.yarnrc
+# Ignorar archivos de configuración de entorno
+.env.local
+.env.development
+.env.test
+.env.production
+# Ignorar archivos de configuración de IDEs específicos
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+# Ignorar archivos de configuración de sistemas de construcción
+.gradle/
+.build/
+.cargo/
+target/
+# Ignorar archivos de configuración de lenguajes específicos
+*.pyc
+*.class
+*.o
+*.exe
+*.dll
+*.so
+# Ignorar archivos de configuración de bases de datos
+*.sqlite
+*.db
+*.sql
+# Ignorar archivos de configuración de imágenes y multimedia
+*.psd
+*.ai
+*.mp4
+*.mov
+*.mp3
+*.wav
+# Ignorar archivos de configuración de fuentes
+*.ttf
+*.otf
+*.woff
+*.woff2
+# Ignorar archivos de configuración de archivos comprimidos
+*.zip
+*.tar.gz
+*.rar
+*.7z
+# Ignorar archivos de configuración de archivos temporales de editores
+*~
+*.swp
+*.swo
+# Ignorar archivos de configuración de archivos de sistema
+ehthumbs.db
+Icon?
+Desktop.ini
+# Ignorar archivos de configuración de caché de navegadores
+.cache/
+*.localstorage
+*.sessionstorage
+# Ignorar archivos de configuración de servicios en la nube
+.aws/
+.gcloud/
+.azure/
+# Ignorar archivos de configuración de contenedores
+.docker/
+.kube/
+# Ignorar archivos de configuración de máquinas virtuales
+.vagrant/
+*.vbox
+*.vmx
