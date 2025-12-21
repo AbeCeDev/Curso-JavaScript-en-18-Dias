@@ -123,4 +123,4 @@ Desktop.ini
 *.vbox
 *.vmx
 # Ignorar carpetas especificadas por el usuario
-/xxPlantilla
+/xxPlantilla/
