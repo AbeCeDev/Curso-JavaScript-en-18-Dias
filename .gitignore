@@ -122,5 +122,3 @@ Desktop.ini
 .vagrant/
 *.vbox
 *.vmx
-# Ignorar carpeta xxPlantilla 
-xxPlantilla/
