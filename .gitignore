@@ -122,3 +122,5 @@ Desktop.ini
 .vagrant/
 *.vbox
 *.vmx
+# Ignorar carpetas especificadas por el usuario
+/xxPlantilla
