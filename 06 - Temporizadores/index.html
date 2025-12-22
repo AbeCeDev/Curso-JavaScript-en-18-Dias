@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temporizadores en JavaScript</title>
+  </head>
+  <body>
+    <!-- SetTimeout se utiliza para ejecutar una función después de un retraso especificado -->
+    <input
+      type="number"
+      id="tiempoElegido"
+      placeholder="Ingresa tiempo en segundos"
+    />
+    <button onclick="comenzarTiempo()">Alarma</button>
+    <h1 id="textoAlarma" style="color: red">ALARMA APAGADA</h1>
+    <script>
+      let elementoTiempo = document.getElementById("tiempoElegido");
+      let elementoTextoAlarma = document.getElementById("textoAlarma");
+
+      function comenzarTiempo() {
+        setTimeout(tiempoCumplido, elementoTiempo.value * 1000); // Ejecuta tiempoCumplido después del tiempo especificado en ms
+      }
+
+      function tiempoCumplido() {
+        elementoTextoAlarma.textContent = "ALARMA ENCENDIDA";
+        elementoTextoAlarma.style.color = "green";
+      }
+    </script>
+  </body>
+</html>
