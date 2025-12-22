@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto 01</title>
+  </head>
+  <body onload="cuentaAtras()">
+    <h1>Tiempo restante: <span id="tiempo"></span></h1>
+
+    <h1>Pregunta 1:</h1>
+    <p>¿Como te llamas?</p>
+    <input type="text" id="nombreUsuario" placeholder="Ingresa tu nombre" />
+
+    <h1>Pregunta 2:</h1>
+    <p>¿Cuál es tu color favorito?</p>
+    <input
+      type="text"
+      id="colorFavorito"
+      placeholder="Ingresa tu color favorito"
+    />
+
+    <h1>Pregunta 3:</h1>
+    <p>¿Cuál es tu comida favorita?</p>
+    <input
+      type="text"
+      id="comidaFavorita"
+      placeholder="Ingresa tu comida favorita"
+    />
+
+    <h1>Pregunta 4:</h1>
+    <p>¿Cuál es tu hobby favorito?</p>
+    <input
+      type="text"
+      id="hobbyFavorito"
+      placeholder="Ingresa tu hobby favorito"
+    />
+
+    <h1>Pregunta 5:</h1>
+    <p>¿Cuál es tu película favorita?</p>
+    <input
+      type="text"
+      id="peliculaFavorita"
+      placeholder="Ingresa tu película favorita"
+    />
+
+    <!-- Botón de finalizar encuesta estará deshabilitado hasta rellenar los 5 campos -->
+    <button onclick="finalizarEncuesta()">Finalizar Encuesta</button>
+    <br /><br />
+    <button onclick="reintentarEncuesta()">Reintentar Encuesta</button>
+
+    <audio id="audio">
+      <source src="multimedia/gameover.mp3" type="audio/mpeg" />
+      Sonido no soportado.
+    </audio>
+    <script>
+      let tiempoTerminado;
+      let intervaloTiempo;
+
+      function cuentaAtras() {
+        tiempoTerminado = setTimeout(finDelTiempo, 30000); // 60 segundos para completar la encuesta
+        intervaloTiempo = setInterval(actualizarTiempo, 1000); // Actualiza el tiempo restante cada segundo
+
+        document.getElementById("tiempo").textContent = 30; // Inicializa el tiempo mostrado
+      }
+      function ticTac() {
+        let tiempo = document.getElementById("tiempo").textContent;
+        document.getElementById("tiempo").textContent = tiempo - 1;
+      }
+
+      function tiempoCumplido() {
+        clearInterval(intervaloTiempo); // Detiene la actualización del tiempo
+        document.getElementById("tiempo").textContent = "0";
+        document.getElementById("audio").play(); // Reproduce el audio de game over
+        let elementoAudio = document.getElementById("audio");
+        elementoAudio.play(); // Reproduce el audio de game over
+        alert("¡Se terminó el tiempo! La encuesta ha finalizado.");
+      }
+
+      function finalizarEncuesta() {
+        clearTimeout(tiempoTerminado); // Detiene el temporizador
+        clearInterval(intervaloTiempo); // Detiene la actualización del tiempo
+
+        let fecha = new Date();
+        let nombreUsuario = document.getElementById("nombreUsuario").value;
+        let colorFavorito = document.getElementById("colorFavorito").value;
+        let comidaFavorita = document.getElementById("comidaFavorita").value;
+        let hobbyFavorito = document.getElementById("hobbyFavorito").value;
+        let peliculaFavorita =
+          document.getElementById("peliculaFavorita").value;
+
+        let mensaje =
+          fecha.toDateString("es-ES") +
+          "\n" +
+          "Nombre: " +
+          nombreUsuario +
+          "\n" +
+          "Color Favorito: " +
+          colorFavorito +
+          "\n" +
+          "Comida Favorita: " +
+          comidaFavorita +
+          "\n" +
+          "Hobby Favorito: " +
+          hobbyFavorito +
+          "\n" +
+          "Película Favorita: " +
+          peliculaFavorita;
+        alert("¡Encuesta finalizada! Gracias por participar.");
+      }
+
+      function reintentarEncuesta() {
+        location.reload(); // Recarga la página para reiniciar la encuesta
+      }
+    </script>
+  </body>
+</html>
