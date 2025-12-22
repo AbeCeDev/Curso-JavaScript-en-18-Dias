@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Fecha y Hora</title>
+  </head>
+  <!-- Parámetro onload para iniciar el reloj cuando la página carga -->
+  <body onload="comenzarReloj()">
+    <!-- SetTimeout se utiliza para ejecutar una función después de un retraso especificado -->
+    <input
+      type="number"
+      id="tiempoElegido"
+      placeholder="Ingresa tiempo en segundos"
+    />
+    <button onclick="comenzarTiempo()">Alarma</button>
+    <h1 id="textoAlarma">00:00:00</h1>
+
+    <!-- Elemento de audio para la alarma, con controles para reproducir, pausar, etc. -->
+    <audio id="audioAlarma" controls>
+      <source src="multimedia/alarma.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+    <script>
+      let elementoTiempo = document.getElementById("tiempoElegido");
+      let elementoTextoAlarma = document.getElementById("textoAlarma");
+      let elementoAudioAlarma = document.getElementById("audioAlarma"); // Referencia al elemento de audio
+
+      function comenzarTiempo() {
+        setTimeout(tiempoCumplido, elementoTiempo.value * 1000); // Ejecuta tiempoCumplido después del tiempo especificado en ms
+      }
+
+      function tiempoCumplido() {
+        elementoTextoAlarma.style.color = "green";
+        elementoAudioAlarma.play(); // Reproduce el audio de la alarma
+      }
+
+      // Función para actualizar el reloj cada segundo
+      function comenzarReloj() {
+        setInterval(ticTac, 1000);
+      }
+
+      function ticTac() {
+        let tiempoActual = new Date(); // Obtiene la fecha y hora actual
+        let hora = tiempoActual.getHours();
+        let minutos = tiempoActual.getMinutes();
+        let segundos = String(tiempoActual.getSeconds()).padStart(2, "0"); // Asegura que los segundos tengan dos dígitos
+
+        let textoHora = hora + ":" + minutos + ":" + segundos;
+        elementoTextoAlarma.textContent = textoHora;
+      }
+    </script>
+  </body>
+</html>
