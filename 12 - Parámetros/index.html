@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parámetros</title>
+  </head>
+  <body>
+    <p>Primer número:</p>
+    <input type="number" id="num1" />
+    <p>Segundo número:</p>
+    <input type="number" id="num2" />
+    <button onclick="mostrarResultado()">Calcular</button>
+    <h2 id="resultado"></h2>
+
+    <script>
+      // Los parámetros son variables que se definen en la declaración de una función, están entre los paréntesis
+      function sumar(a, b) {
+        // Los parámetros 'a' y 'b' permiten pasar valores a la función cuando se llama
+        // Podemos convertir los parámetros a números usando el operador unario '+' para asegurarnos de que se sumen correctamente
+        resultado = +a + +b;
+        return resultado;
+      }
+
+      function monstrarResultado() {
+        let elementoNum1 = document.getElementById("num1");
+        let elementoNum2 = document.getElementById("num2");
+        let elementoTextoResultado = document.getElementById("resultado");
+        let elementoSuma = sumar(
+          Number(elementoNum1.value),
+          Number(elementoNum2.value)
+        );
+        elementoTextoResultado.textContent =
+          "El resultado de la suma es: " + elementoSuma;
+      }
+    </script>
+  </body>
+</html>
